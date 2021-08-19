@@ -9,13 +9,17 @@
   import myButton from './my-button.vue';
 
   export default {
+    props: {
+      parentCount: null
+    },
     components: {
       myCounter,
       myButton
     },
     data() {
+      let pCount = this.parentCount == null ? 0 : this.parentCount;
       return {
-        counter: 0,
+        counter: pCount,
         callback: null,
         reset: null
       }

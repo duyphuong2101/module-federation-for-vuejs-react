@@ -8,6 +8,7 @@
   <h1>Adoptable Dogs</h1>
   <Carousel />
   <Item :src="'http://localhost:888/src/images/Cindy.jpg'" :alt="'Cindy'" />
+  <vue-button :parent-count="counter" />
 </div>
 </template>
 
@@ -15,20 +16,21 @@
 import Header from './Header.vue';
 import Carousel from 'Detail/Carousel';
 import Item from 'Item/Item';
+import VueButton from 'VueButton/Button';
+import ReactButton from 'ReactButton/Button';
 
 export default {
   components: {
     Header,
     Carousel,
-    Item
+    Item,
+    VueButton,
+    ReactButton
   },
-  // data() {
-  //   return {
-  //     showSearch: false
-  //   }
-  // },
-  mounted() {
-    
-  }
+  data() {
+      return {
+        counter: 0
+      }
+    }
 }
 </script>
