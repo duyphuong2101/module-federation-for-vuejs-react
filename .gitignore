@@ -1,0 +1,8 @@
+button-react/node_modules/*
+button-vue/node_modules/*
+detail/node_modules/*
+home/node_modules/*
+item/node_modules/*
+node_modules/*
+button-react/node_modules/*
+.vscode/settings.json
