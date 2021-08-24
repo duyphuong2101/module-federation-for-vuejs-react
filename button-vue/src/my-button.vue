@@ -1,15 +1,16 @@
 
 <template>
-    <button @click="callback">Click</button>
+    <button @click="callback">Counter</button>
     &nbsp;
-    <button @click="reset">Reset</button>
+    <button @click="reset" v-if="counter > 0">Reset</button>
 </template>
 
 <script>
   export default {
     props: {
       callback: null,
-      reset: null
+      reset: null,
+      counter: 0
     }
   };
 </script>

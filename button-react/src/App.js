@@ -30,9 +30,9 @@ class Counter extends React.Component {
       return (
         <>
            <h2>{this.state.clickCounter}</h2>
-           <Button clickHandler={this.btnClickCounterHandler} caption="Click" />
+           <Button clickHandler={this.btnClickCounterHandler} caption="Counter" />
            &nbsp;&nbsp;&nbsp;
-           <Button clickHandler={this.btnClickResetHandler} caption="Reset" />
+           { this.state.clickCounter > 0 ? <Button clickHandler={this.btnClickResetHandler} caption="Reset" /> : null }
         </>
    )}
 }
