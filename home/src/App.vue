@@ -2,7 +2,6 @@
 <div class="container">
   <Header />
   <h1>Great Dogs Deserve Great Homes</h1>
-  <h2>Adoptable Dogs</h2>
   <Carousel />
   <br />
   <div class="counter">

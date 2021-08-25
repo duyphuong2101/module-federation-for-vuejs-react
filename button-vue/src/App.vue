@@ -1,7 +1,9 @@
 
 <template>
-    <my-counter :value="counter"></my-counter>
-    <my-button :counter="counter" :callback="incrementCounter" :reset="incrementReset"></my-button>
+  <div>
+      <my-counter :value="counter"></my-counter>
+      <my-button :counter="counter" :callback="incrementCounter" :reset="incrementReset"></my-button>
+  </div>
 </template>
 
 <script>
