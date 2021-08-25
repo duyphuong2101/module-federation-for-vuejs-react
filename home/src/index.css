@@ -24,3 +24,15 @@ body {
 .counter div + div {
   margin-left: 80px;
 }
+
+.counter .vue-lbl, .counter .react-lbl{
+  display: block;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ccc;
+  background: rgb(255, 222, 198);
+}
+
+.counter .react-lbl {
+  background: rgb(219, 227, 241);
+}

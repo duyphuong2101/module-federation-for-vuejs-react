@@ -17,12 +17,14 @@
       myButton
     },
     data() {
-      let pCount = this.parentCount == null ? 0 : this.parentCount;
       return {
-        counter: pCount,
+        counter: 0,
         callback: null,
         reset: null
       }
+    },
+    mounted() {
+      this.counter = this.parentCount == null ? 0 : this.parentCount;
     },
     methods: {
       incrementCounter() {
@@ -30,6 +32,9 @@
       },
       incrementReset() {
         this.counter = 0;
+      },
+      setCounterValue(val) {
+        this.counter = val ? val : this.counter;
       }
     }
   };

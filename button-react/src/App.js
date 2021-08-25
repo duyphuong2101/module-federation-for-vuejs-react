@@ -13,9 +13,10 @@ class Button extends React.Component {
 class Counter extends React.Component {
   constructor(props) {
     super(props);    
-    this.state = {clickCounter: 0};
+    this.state = {clickCounter: this.props.counter ? parseInt(this.props.counter) : 0};
     this.btnClickCounterHandler = this.btnClickCounterHandler.bind(this);
     this.btnClickResetHandler = this.btnClickResetHandler.bind(this);
+    this.forceUpdateHandler = this.forceUpdateHandler.bind(this);
   }
   
   btnClickCounterHandler() {
@@ -25,15 +26,19 @@ class Counter extends React.Component {
   btnClickResetHandler() {
     this.setState({clickCounter: 0});    
   };
+
+  forceUpdateHandler(){
+    this.forceUpdate();
+  };
   
   render() {
-      return (
-        <>
-           <h2>{this.state.clickCounter}</h2>
-           <Button clickHandler={this.btnClickCounterHandler} caption="Counter" />
-           &nbsp;&nbsp;&nbsp;
-           { this.state.clickCounter > 0 ? <Button clickHandler={this.btnClickResetHandler} caption="Reset" /> : null }
-        </>
+    return (
+      <>
+          <h2 className="react-lbl"><span>{this.state.clickCounter}</span></h2>
+          <Button clickHandler={this.btnClickCounterHandler} caption="Counter" />
+          &nbsp;&nbsp;&nbsp;
+          { this.state.clickCounter > 0 ? <Button clickHandler={this.btnClickResetHandler} caption="Reset in React" /> : null }
+      </>
    )}
 }
 

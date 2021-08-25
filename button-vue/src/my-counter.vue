@@ -1,6 +1,6 @@
 
 <template>
-    <h2 v-html="value"></h2>
+    <h2 class="vue-lbl"><span  v-html="value"></span></h2>
 </template>
 
 <script>

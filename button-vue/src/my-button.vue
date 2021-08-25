@@ -2,7 +2,7 @@
 <template>
     <button @click="callback">Counter</button>
     &nbsp;
-    <button @click="reset" v-if="counter > 0">Reset</button>
+    <button @click="reset" v-if="counter > 0">Reset in Vue</button>
 </template>
 
 <script>
