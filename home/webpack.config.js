@@ -56,8 +56,8 @@ module.exports = {
       remotes: {
         Detail: "Detail@http://localhost:881/remoteEntry.js",
         Item: "Item@http://localhost:888/remoteEntry.js",
-        VueButton: "VueButton@http://localhost:777/remoteEntry.js",
-        ReactButton: "ReactButton@http://localhost:666/remoteEntry.js",
+        VueComponents: "VueComponents@http://localhost:777/remoteEntry.js",
+        ReactComponents: "ReactComponents@http://localhost:666/remoteEntry.js"
       },
       exposes: {
         "./Header": "./src/Header.vue",

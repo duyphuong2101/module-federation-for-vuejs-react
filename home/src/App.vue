@@ -6,16 +6,18 @@
   <br />
   <div class="counter">
     <div class="vue">
-      <h3>Vue Counter</h3>
-      <vue-button :parent-count="counter" ref="vuecounter" />
-      <br><br />
+      <vue-hello-world />
+      <h3>Vue component Counter</h3>
+      <vue-counter :parent-count="counter" ref="vuecounter" />
+      <br>
       <button @click.prevent="$refs.vuecounter.incrementReset">Reset vue Counter form Home</button>
       <br><br />
       <button @click.prevent="$refs.vuecounter.setCounterValue(5)">Set vue Counter form Home = 5</button>
     </div>
     <div class="react">
-      <h3>React Counter</h3>
-      <div id="button-react" />
+      <div id="react-hello-world" />
+      <h3>React component Counter</h3>
+      <div id="react-counter" />
       <br>
       <button @click.prevent="setReactCounterValue(0)">Reset React Counter form Home</button>
       <br><br>
@@ -30,16 +32,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Header from './Header.vue';
 import Carousel from 'Detail/Carousel';
-import Item from 'Item/Item';
-import VueButton from 'VueButton/Button';
-import ReactButtom from 'ReactButton/Button';
+import VueHelloWorld from 'VueComponents/HelloWorld';
+import VueCounter from 'VueComponents/Counter';
+import ReactHelloWorld from 'ReactComponents/HelloWorld';
+import ReactCounter from 'ReactComponents/Counter';
 
 export default {
   components: {
     Header,
     Carousel,
-    Item,
-    VueButton
+    VueHelloWorld,
+    VueCounter
   },
   data() {
     return {
@@ -51,18 +54,20 @@ export default {
     init(){
       const loadedStates = ['complete', 'loaded', 'interactive'];
       if (loadedStates.includes(document.readyState) && document.body) {
-        ReactDOM.render(<ReactButtom 
+        ReactDOM.render(<ReactCounter 
           counter={this.counter} />, 
-          document.getElementById("button-react"));
+          document.getElementById("react-counter"));
+
+        ReactDOM.render(<ReactHelloWorld />, 
+          document.getElementById("react-hello-world"));
       } else {
         window.addEventListener('DOMContentLoaded', run, false);
       }
     },
     setReactCounterValue(val) {
-      let self = this;
-      self.counter = val;
-      ReactDOM.unmountComponentAtNode(document.getElementById('button-react'));
-      self.init();
+      this.counter = val;
+      ReactDOM.unmountComponentAtNode(document.getElementById('react-counter'));
+      this.init();
     }
   },
   mounted(){

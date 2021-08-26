@@ -6,8 +6,8 @@
       "home",
       "detail",
       "item",
-      "button-react",
-      "button-vue"
+      "ReactComponents",
+      "VueComponents"
     ]
   },
   "scripts": {
